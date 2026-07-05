@@ -1,0 +1,20 @@
+[Unit]
+Description=JRF waitlist API (SQLite, localhost:8127)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/jrfbelt/waitlist.py
+Environment=WAITLIST_DB=/opt/jrfbelt/waitlist.db
+EnvironmentFile=/opt/jrfbelt/waitlist.env
+Restart=always
+RestartSec=3
+User=jrfbelt
+Group=jrfbelt
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/jrfbelt
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
