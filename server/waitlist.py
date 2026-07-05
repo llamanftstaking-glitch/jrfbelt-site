@@ -96,4 +96,5 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    ThreadingHTTPServer(("127.0.0.1", 8127), Handler).serve_forever()
+    host = os.environ.get("BIND_HOST", "127.0.0.1")
+    ThreadingHTTPServer((host, 8127), Handler).serve_forever()
