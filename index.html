@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JRF Sweat Belt — Limited Edition · Built Different.</title>
+<meta name="description" content="The JRF Sweat Belt — Limited Edition. 5,000 individually numbered units. Thin, premium, engineered for every move, every day. Join the waitlist for first access.">
+<meta property="og:title" content="JRF Sweat Belt — Limited Edition">
+<meta property="og:description" content="Only 5,000 ever made. Individually numbered. Join the waitlist for first access.">
+<meta property="og:image" content="https://jrfbelt.com/assets/hero.webp">
+<meta property="og:url" content="https://jrfbelt.com">
+<style>
+  :root{
+    --bg:#0A0A0B; --bg2:#0F0F11; --panel:#141417;
+    --line:rgba(255,255,255,.10); --gold:#C9A353; --gold-dim:rgba(201,163,83,.45);
+    --gold-faint:rgba(201,163,83,.16); --ink:#EBE9E4; --muted:#A6A198; --faint:#6E6A62;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased;line-height:1.6}
+  h1,h2,h3,.kicker,.btn,nav .wordmark{font-family:Bahnschrift,"Segoe UI",Arial,sans-serif}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  section{padding:96px 24px}
+  .wrap{max-width:1100px;margin:0 auto}
+  .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  h2{font-size:clamp(28px,4.5vw,44px);font-weight:600;line-height:1.1;letter-spacing:.01em}
+  h2 .thin{color:var(--muted);font-weight:300}
+  .lede{color:var(--muted);font-size:17px;max-width:640px;margin-top:16px}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;
+      justify-content:space-between;padding:18px 28px;
+      background:linear-gradient(rgba(10,10,11,.92),rgba(10,10,11,.75) 70%,transparent);
+      backdrop-filter:blur(6px)}
+  nav .wordmark{font-size:18px;font-weight:700;letter-spacing:.18em}
+  nav .wordmark small{display:block;font-size:9px;letter-spacing:.34em;color:var(--gold);font-weight:400}
+  .btn{display:inline-block;background:var(--gold);color:#0A0A0B;font-weight:700;
+       font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+       padding:14px 28px;border:none;cursor:pointer;transition:.2s}
+  .btn:hover{background:#DDBC6E;transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold-dim)}
+  .btn.ghost:hover{border-color:var(--gold);background:var(--gold-faint)}
+  nav .btn{padding:10px 20px;font-size:11px}
+
+  /* hero */
+  header{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+  header .bg{position:absolute;inset:0}
+  header .bg img{width:100%;height:100%;object-fit:cover;object-position:left 22%;opacity:.55}
+  header .scrim{position:absolute;inset:0;
+      background:linear-gradient(100deg,rgba(10,10,11,.35) 0%,rgba(10,10,11,.86) 52%,rgba(10,10,11,.97) 100%)}
+  header .wrap{position:relative;display:flex;justify-content:flex-end;width:100%;padding:0 24px}
+  .hero-card{max-width:560px;padding:24px 0}
+  .hero-card .edition{display:inline-block;border:1px solid var(--gold-dim);color:var(--gold);
+      font-size:11px;letter-spacing:.3em;text-transform:uppercase;padding:8px 16px;margin-bottom:28px}
+  h1{font-size:clamp(40px,6.5vw,68px);font-weight:700;line-height:1.02;letter-spacing:.01em}
+  h1 small{display:block;font-size:clamp(13px,1.6vw,16px);font-weight:300;
+      letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-top:14px}
+  .hero-card p{color:var(--muted);font-size:17px;margin:26px 0 34px;max-width:460px}
+  .hero-card .n{color:var(--ink);font-weight:600}
+
+  /* waitlist form */
+  .wl{display:flex;gap:10px;max-width:460px}
+  .wl input{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--line);
+      color:var(--ink);padding:14px 16px;font-size:15px;font-family:inherit;min-width:0}
+  .wl input:focus{outline:none;border-color:var(--gold-dim)}
+  .wl-note{font-size:12px;color:var(--faint);margin-top:12px;letter-spacing:.04em}
+  .wl-ok{display:none;border:1px solid var(--gold-dim);background:var(--gold-faint);
+      color:var(--gold);padding:14px 18px;font-size:14px;max-width:460px}
+
+  /* scenario strip */
+  .strip{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+      padding:22px 24px;display:flex;justify-content:center;gap:34px;flex-wrap:wrap}
+  .strip span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .strip b{color:var(--gold);font-weight:400;margin-right:34px}
+
+  /* features */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:48px}
+  @media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--panel);border:1px solid var(--line);padding:26px 24px;transition:.25s}
+  .card:hover{border-color:var(--gold-dim);transform:translateY(-3px)}
+  .card .ico{width:34px;height:34px;border:1px solid var(--gold-dim);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;color:var(--gold);
+      font-size:15px;margin-bottom:16px}
+  .card h3{font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  .card p{font-size:14px;color:var(--muted);line-height:1.55}
+
+  /* comparison */
+  .compare{background:var(--bg2)}
+  table{width:100%;border-collapse:collapse;margin-top:44px;font-size:15px}
+  th{font-family:Bahnschrift,"Segoe UI",sans-serif;text-align:left;font-size:12px;
+     letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+     padding:14px 16px;border-bottom:1px solid var(--gold-dim)}
+  th:not(:first-child), td:not(:first-child){text-align:center}
+  td{padding:13px 16px;border-bottom:1px solid var(--line)}
+  td:first-child{color:var(--ink)}
+  td .x{color:#8a5050;font-size:16px} td .v{color:var(--gold);font-size:16px}
+  tr:hover td{background:rgba(255,255,255,.02)}
+
+  /* limited edition */
+  .edition-sec{position:relative;overflow:hidden}
+  .edition-sec .bg{position:absolute;inset:0}
+  .edition-sec .bg img{width:100%;height:100%;object-fit:cover;opacity:.22}
+  .edition-sec .scrim{position:absolute;inset:0;
+      background:linear-gradient(rgba(10,10,11,.6),rgba(10,10,11,.94))}
+  .edition-sec .wrap{position:relative;text-align:center;max-width:760px}
+  .metal-card{margin:44px auto 0;width:min(380px,88vw);aspect-ratio:1.586;
+      background:linear-gradient(145deg,#17171a,#0c0c0e 60%,#141416);
+      border:1px solid var(--gold-dim);border-radius:12px;
+      display:flex;flex-direction:column;justify-content:center;gap:10px;
+      box-shadow:0 30px 80px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.06)}
+  .metal-card .mc-brand{font-family:Bahnschrift;font-size:13px;letter-spacing:.4em;color:var(--ink)}
+  .metal-card .mc-line{width:44px;height:1px;background:var(--gold);margin:2px auto}
+  .metal-card .mc-title{font-size:10px;letter-spacing:.34em;color:var(--gold);text-transform:uppercase}
+  .metal-card .mc-num{font-family:Bahnschrift;font-size:26px;letter-spacing:.18em;color:var(--ink)}
+  .metal-card .mc-foot{font-size:8px;letter-spacing:.3em;color:var(--faint);text-transform:uppercase}
+
+  /* packaging */
+  .pack{position:relative;overflow:hidden;min-height:70vh;display:flex;align-items:center}
+  .pack .bg{position:absolute;inset:0}
+  .pack .bg img{width:100%;height:100%;object-fit:cover;object-position:right center;opacity:.55}
+  .pack .scrim{position:absolute;inset:0;
+      background:linear-gradient(90deg,rgba(10,10,11,.95) 0%,rgba(10,10,11,.75) 45%,rgba(10,10,11,.3) 100%)}
+  .pack .wrap{position:relative}
+  .pack ul{list-style:none;margin-top:26px;max-width:420px}
+  .pack li{padding:10px 0 10px 26px;position:relative;color:var(--muted);font-size:15px;
+      border-bottom:1px solid var(--line)}
+  .pack li::before{content:"";position:absolute;left:0;top:20px;width:12px;height:1px;background:var(--gold)}
+  .pack li b{color:var(--ink);font-weight:600}
+
+  /* final cta */
+  .final{text-align:center}
+  .final .wrap{max-width:640px}
+  .final .wl{margin:36px auto 0;justify-content:center}
+  .final .wl-ok{margin:36px auto 0}
+
+  footer{border-top:1px solid var(--line);padding:36px 24px;display:flex;
+      justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+      font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  footer .g{color:var(--gold-dim)}
+
+  @media (max-width:640px){
+    section{padding:72px 20px}
+    header .bg img{object-position:38% top}
+    .hero-card{padding-top:90px}
+    .wl{flex-direction:column}
+    .strip b{margin-right:0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="#top">JRF<small>Limited Edition</small></a>
+  <a class="btn" href="#waitlist">Join the Waitlist</a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="top">
+  <div class="bg"><img src="assets/hero.webp" alt="JRF Sweat Belt — Limited Edition" fetchpriority="high"></div>
+  <div class="scrim"></div>
+  <div class="wrap">
+    <div class="hero-card">
+      <span class="edition">Only 5,000 ever made · individually numbered</span>
+      <h1>BUILT<br>DIFFERENT.<small>The JRF Sweat Belt</small></h1>
+      <p>A premium sweat belt engineered like athletic apparel — <span class="n">thin</span>,
+      <span class="n">comfortable</span>, with hidden pockets for your phone, keys and AirTag.
+      Train in it. Live in it. Nobody knows it's there.</p>
+      <form class="wl" id="wl-hero" action="https://formsubmit.co/rwq2026@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="JRF Waitlist — new signup">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://jrfbelt.com/?joined=1#waitlist">
+        <input type="email" name="email" required placeholder="you@email.com" aria-label="Email address">
+        <button class="btn" type="submit">Get First Access</button>
+      </form>
+      <div class="wl-ok" id="wl-ok-hero">You're on the list. Watch your inbox — numbered units go to the waitlist first.</div>
+      <div class="wl-note">First access to launch pricing and your edition number. No spam — launch news only.</div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <span><b>One belt. Every scenario.</b></span>
+  <span>Walking</span><span>Running</span><span>Lifting</span><span>Boxing</span>
+  <span>HIIT</span><span>Dance</span><span>Everyday Wear</span>
+</div>
+
+<!-- ================= FEATURES ================= -->
+<section id="features">
+  <div class="wrap">
+    <div class="kicker">Engineered. Not Decorated.</div>
+    <h2>Every detail has a job. <span class="thin">No bulk. No gimmicks.</span></h2>
+    <p class="lede">Premium 4&thinsp;mm CR neoprene laminated with soft-touch jersey — a ~6.5&thinsp;mm profile
+    that disappears under a T-shirt. This is not a waist trainer. This is not a sauna wrap.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">◱</div><h3>Hidden Phone Pocket</h3>
+        <p>Zippered, expandable, microfiber-lined. Fits every current flagship — and stays visually flat while you move.</p></div>
+      <div class="card"><div class="ico">⇄</div><h3>Dual Compression</h3>
+        <p>Main closure sets the fit; two independent straps fine-tune core pressure. Locked in — no re-wrapping mid-session.</p></div>
+      <div class="card"><div class="ico">⬡</div><h3>HexGrip Interior</h3>
+        <p>Heat-cured silicone hex pattern grips under compression. The belt doesn't ride, roll, or migrate. Ever.</p></div>
+      <div class="card"><div class="ico">◉</div><h3>Hidden AirTag Pocket</h3>
+        <p>A concealed sleeve behind the emblem. Track your belt — and everything in it — anywhere.</p></div>
+      <div class="card"><div class="ico">≡</div><h3>Slim Lumbar Support</h3>
+        <p>A removable contoured insert supports your lower back when lifting. Slide it out for cardio days.</p></div>
+      <div class="card"><div class="ico">◈</div><h3>YKK. Flatlock. Bound.</h3>
+        <p>YKK zipper, flatlock seams against skin, bound edges throughout. Luxury construction, machine washable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARISON ================= -->
+<section class="compare">
+  <div class="wrap">
+    <div class="kicker">Engineered Different. Built Superior.</div>
+    <h2>Ordinary belt <span class="thin">vs.</span> JRF</h2>
+    <table>
+      <tr><th>Feature</th><th>Ordinary Belt</th><th>JRF — Limited Edition</th></tr>
+      <tr><td>Secure phone pocket</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Dual compression system</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Hidden AirTag pocket</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Lumbar support panel</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Hidden zippered pocket</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Anti-slip HexGrip interior</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Premium 4mm CR neoprene</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Reflective low-light details</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Machine washable</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+      <tr><td>Individually numbered edition</td><td><span class="x">✕</span></td><td><span class="v">✓</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= LIMITED EDITION ================= -->
+<section class="edition-sec">
+  <div class="scrim" style="background:radial-gradient(ellipse 70% 60% at 50% 40%, rgba(201,163,83,.08), transparent 70%)"></div>
+  <div class="wrap">
+    <div class="kicker">Founder's Edition</div>
+    <h2>Your number. <span class="thin">Nobody else's.</span></h2>
+    <p class="lede" style="margin-left:auto;margin-right:auto">Every belt ships with an engraved metal card
+    and a matching serial inside the belt itself. When they're gone, they're gone —
+    this edition will never be re-run.</p>
+    <div class="metal-card">
+      <div class="mc-brand">J&thinsp;R&thinsp;F</div>
+      <div class="mc-line"></div>
+      <div class="mc-title">Founder's Edition</div>
+      <div class="mc-num">Nº 0001 / 5000</div>
+      <div class="mc-foot">Built Different.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACKAGING ================= -->
+<section class="pack">
+  <div class="bg"><img src="assets/packaging.webp" alt="JRF Sweat Belt luxury packaging" loading="lazy"></div>
+  <div class="scrim"></div>
+  <div class="wrap">
+    <div class="kicker">The Unboxing</div>
+    <h2>Packaged like it matters.<br><span class="thin">Because it does.</span></h2>
+    <ul>
+      <li><b>Magnetic drawer box</b> — soft-touch matte, gold-foil emblem</li>
+      <li><b>Premium dust bag</b> — protect it between sessions</li>
+      <li><b>Engraved metal card</b> — your unique edition number</li>
+      <li><b>Workout guide</b> — train with it the way it was designed</li>
+      <li><b>Limited lifetime warranty</b></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final" id="waitlist">
+  <div class="wrap">
+    <div class="kicker">Discipline. Focus. Movement.</div>
+    <h2>Be first in line.<span class="thin"> Low numbers go fast.</span></h2>
+    <p class="lede" style="margin-left:auto;margin-right:auto">Waitlist members get first access to
+    launch pricing and the earliest edition numbers. 5,000 units. One run. Never again.</p>
+    <form class="wl" id="wl-final" action="https://formsubmit.co/rwq2026@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="JRF Waitlist — new signup">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://jrfbelt.com/?joined=1#waitlist">
+      <input type="email" name="email" required placeholder="you@email.com" aria-label="Email address">
+      <button class="btn" type="submit">Join the Waitlist</button>
+    </form>
+    <div class="wl-ok" id="wl-ok-final">You're on the list. Watch your inbox — numbered units go to the waitlist first.</div>
+    <div class="wl-note">By joining you agree to receive launch emails from JRF. Unsubscribe anytime.</div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 JRF — Jose Ramos Fitness</span>
+  <span class="g">Built Different. Be Better.</span>
+  <span>jrfbelt.com</span>
+</footer>
+
+<script>
+  // returning from FormSubmit redirect → show confirmation instead of the form
+  if (new URLSearchParams(location.search).get('joined') === '1') {
+    for (const id of ['hero','final']) {
+      const f = document.getElementById('wl-' + id);
+      const ok = document.getElementById('wl-ok-' + id);
+      if (f && ok) { f.style.display = 'none'; ok.style.display = 'block'; }
+    }
+  }
+</script>
+</body>
+</html>
